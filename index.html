@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazel SRT File | Premium Translator</title>
+    <title>Hazel SRT File | Pro Translator</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <header>
             <h1><i class="fa-solid fa-closed-captioning"></i> Hazel SRT File</h1>
-            <p>Smart AI Subtitle Translator</p>
+            <p>Smart AI Subtitle Translator (Pro Version)</p>
         </header>
 
         <main>
@@ -21,22 +20,25 @@
                 <input type="password" id="apiKey" placeholder="Enter your Google Gemini API Key">
             </div>
 
-            <div class="file-upload">
-                <input type="file" id="srtFile" accept=".srt">
-                <label for="srtFile" class="upload-btn">
-                    <i class="fa-solid fa-file-upload"></i> Upload SRT File
-                </label>
-                <span id="fileName">No file selected</span>
+            <div class="input-section">
+                <div class="file-upload-box">
+                    <input type="file" id="srtFile" accept=".srt">
+                    <label for="srtFile" class="upload-btn">
+                        <i class="fa-solid fa-file-upload"></i> Upload .SRT File
+                    </label>
+                    <span id="fileName">Or paste text below</span>
+                </div>
+                <textarea id="srtInputText" placeholder="ဒီနေရာမှာ SRT စာသားတွေကို Paste ချပါ (သို့) ဖိုင် Upload တင်ပါ..." rows="6"></textarea>
             </div>
 
             <div class="controls">
                 <button id="startBtn" class="btn primary"><i class="fa-solid fa-play"></i> Start Translate</button>
-                <button id="resumeBtn" class="btn secondary" style="display: none;"><i class="fa-solid fa-rotate-right"></i> Resume</button>
+                <button id="resumeBtn" class="btn secondary" style="display: none;"><i class="fa-solid fa-rotate-right"></i> Resume Auto-Save</button>
             </div>
 
             <div class="progress-container">
                 <div class="progress-info">
-                    <span id="statusText">Ready</span>
+                    <span id="statusText">Ready to start</span>
                     <span id="percentageText">0%</span>
                 </div>
                 <div class="progress-bar">
@@ -44,8 +46,24 @@
                 </div>
             </div>
 
+            <div class="preview-section">
+                <div class="preview-box">
+                    <label><i class="fa-solid fa-scissors"></i> ခွဲထုတ်ထားသော စာသားများ (Extracted)</label>
+                    <textarea id="extractedPreview" readonly placeholder="မူရင်းစာသားများကို အချိန်ဖြုတ်၍ ဤနေရာတွင် မြင်ရပါမည်..." rows="5"></textarea>
+                </div>
+                <div class="preview-box">
+                    <label><i class="fa-solid fa-language"></i> ဘာသာပြန်ရလဒ် (Translated)</label>
+                    <textarea id="translatedPreview" readonly placeholder="AI မှ ဘာသာပြန်ပေးသော စာသားများ ဤနေရာတွင် ပေါ်လာပါမည်..." rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="final-box">
+                <label><i class="fa-solid fa-layer-group"></i> ပြန်လည်ပေါင်းစပ်ထားသော SRT (Final Output)</label>
+                <textarea id="finalOutput" readonly placeholder="အချိန် (Timestamps) များနှင့် မြန်မာစာသား ပြန်လည်ပေါင်းစပ်ထားသော အပြီးသတ် SRT ဤနေရာတွင် ပေါ်လာပါမည်။" rows="6"></textarea>
+            </div>
+
             <div class="output-group">
-                <button id="downloadBtn" class="btn success" disabled><i class="fa-solid fa-download"></i> Download Translated SRT</button>
+                <button id="downloadBtn" class="btn success" disabled><i class="fa-solid fa-download"></i> Download SRT</button>
                 <button id="copyBtn" class="btn outline" disabled><i class="fa-solid fa-copy"></i> Copy SRT</button>
             </div>
         </main>
