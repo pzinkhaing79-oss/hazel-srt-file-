@@ -11,13 +11,23 @@
     <div class="app-container">
         <header>
             <h1><i class="fa-solid fa-closed-captioning"></i> Hazel SRT File</h1>
-            <p>Smart AI Subtitle Translator (Pro Version)</p>
+            <p>Smart AI Subtitle Translator (Universal Version)</p>
         </header>
 
         <main>
-            <div class="input-group">
-                <label for="apiKey"><i class="fa-solid fa-key"></i> Gemini API Key</label>
-                <input type="password" id="apiKey" placeholder="Enter your Google Gemini API Key">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="apiKey"><i class="fa-solid fa-key"></i> Gemini API Key</label>
+                    <input type="password" id="apiKey" placeholder="Enter your Google Gemini API Key">
+                </div>
+                <div class="input-group">
+                    <label for="apiModel"><i class="fa-solid fa-robot"></i> Gemini Model Version</label>
+                    <select id="apiModel">
+                        <option value="gemini-1.5-flash" selected>Gemini 1.5 Flash (အမြန်ဆုံးနှင့် အခမဲ့သုံးရန် အကောင်းဆုံး)</option>
+                        <option value="gemini-1.5-pro">Gemini 1.5 Pro (စာသားအရှည်ကြီးများနှင့် ပိုမိုတိကျစေရန်)</option>
+                        <option value="gemini-pro">Gemini 1.0 Pro (ဗားရှင်းအဟောင်း Key များအတွက်)</option>
+                    </select>
+                </div>
             </div>
 
             <div class="input-section">
