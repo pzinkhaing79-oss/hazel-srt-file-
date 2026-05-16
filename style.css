@@ -38,7 +38,15 @@ header p { color: var(--text-muted); margin: 0; font-size: 14px; }
 
 label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 14px; font-weight: 500; }
 
-input[type="password"], textarea {
+/* Input Grid for Key and Model Dropdown */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input[type="password"], select, textarea {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
@@ -47,9 +55,17 @@ input[type="password"], textarea {
     color: var(--text-main);
     box-sizing: border-box;
     font-family: inherit;
-    resize: vertical;
+    font-size: 14px;
 }
-input[type="password"]:focus, textarea:focus { outline: none; border-color: var(--primary); }
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23d4af37'><polygon points='0,0 10,0 5,5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 30px;
+}
+input[type="password"]:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); }
 
 .input-section { margin-bottom: 20px; }
 .file-upload-box { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
@@ -71,14 +87,13 @@ input[type="file"] { display: none; }
 .progress-bar { width: 100%; height: 8px; background-color: var(--box-bg); border-radius: 4px; overflow: hidden; }
 .progress-fill { height: 100%; background-color: var(--primary); width: 0%; transition: width 0.3s; }
 
-/* Preview Boxes styling */
 .preview-section { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
 .preview-box label, .final-box label { color: var(--primary); font-weight: bold; }
 .final-box { margin-bottom: 25px; }
 
-textarea[readonly] { background-color: #0b0c10; color: #a0aec0; border-color: #2d3748; cursor: text; }
+textarea[readonly] { background-color: #0b0c10; color: #a0aec0; border-color: #2d3748; cursor: text; resize: vertical; }
 
-/* Responsive for Mobile/Tablet */
 @media (max-width: 600px) {
-    .preview-section { grid-template-columns: 1fr; }
+    .input-grid, .preview-section { grid-template-columns: 1fr; }
 }
+
