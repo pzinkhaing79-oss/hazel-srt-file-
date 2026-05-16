@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazel SRT File | Premium Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-closed-captioning"></i> Hazel SRT File</h1>
+            <p>Smart AI Subtitle Translator</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="apiKey"><i class="fa-solid fa-key"></i> Gemini API Key</label>
+                <input type="password" id="apiKey" placeholder="Enter your Google Gemini API Key">
+            </div>
+
+            <div class="file-upload">
+                <input type="file" id="srtFile" accept=".srt">
+                <label for="srtFile" class="upload-btn">
+                    <i class="fa-solid fa-file-upload"></i> Upload SRT File
+                </label>
+                <span id="fileName">No file selected</span>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn primary"><i class="fa-solid fa-play"></i> Start Translate</button>
+                <button id="resumeBtn" class="btn secondary" style="display: none;"><i class="fa-solid fa-rotate-right"></i> Resume</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span id="statusText">Ready</span>
+                    <span id="percentageText">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="output-group">
+                <button id="downloadBtn" class="btn success" disabled><i class="fa-solid fa-download"></i> Download Translated SRT</button>
+                <button id="copyBtn" class="btn outline" disabled><i class="fa-solid fa-copy"></i> Copy SRT</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
